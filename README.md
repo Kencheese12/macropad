@@ -11,7 +11,7 @@ AIによる補助がどこまで行けるのか検証中
 
 ## ブラウザで見る（KiCanvas）
 
-- [基板を見る](https://kicanvas.org/?github=https://github.com/ユーザー名/リポジトリ名/blob/main/focuspad.kicad_pcb)
+- [基板を見る](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FKencheese12%2Fmacropad%2Fblob%2Fmain%2Ffocuspad.kicad_pcb)
 - [回路図を見る](https://kicanvas.org/?github=https://github.com/ユーザー名/リポジトリ名/blob/main/focuspad.kicad_sch)
 
 ## ファイル構成
