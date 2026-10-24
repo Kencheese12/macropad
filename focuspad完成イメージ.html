@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>focuspad 完成イメージ（Bパターン）</title>
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #eef0f3;
+    color: #222;
+  }
+  header {
+    padding: 16px 24px;
+    background: #1f2328;
+    color: #fff;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  header p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #c9d1d9;
+  }
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  .controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .controls button {
+    padding: 6px 14px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .controls button.on {
+    background: #1f2328;
+    color: #fff;
+    border-color: #1f2328;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  .card h2 {
+    font-size: 15px;
+    margin: 4px 0 8px;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    text-align: left;
+  }
+  th {
+    background: #f4f5f7;
+    width: 22%;
+  }
+  .note {
+    font-size: 12px;
+    color: #666;
+    margin: 6px 0 0;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>focuspad 完成イメージ（Bパターン：上フレーム付き）</h1>
+  <p>上フレーム ＋ 基板 ＋ M2スペーサー ＋ 底トレイ ／ JLC3DP FDM（PLA）想定</p>
+</header>
+<main>
+  <div class="controls">
+    <button data-view="assembled">完成状態</button>
+    <button data-view="exploded">分解状態</button>
+  </div>
+  <div class="controls">
+    <button data-color="black">ブラック</button>
+    <button data-color="white">ホワイト</button>
+    <button data-color="two">ツートン（黒フレーム＋グレー底）</button>
+  </div>
+
+  <div class="card">
+    <h2 id="viewTitle">完成状態</h2>
+    <svg id="iso" viewBox="-270 -110 540 410"></svg>
+    <p class="note">キー間隔19.05mm・ノブ径16mmで描いた概略図です。USB-Cは奥側の壁にあります。</p>
+  </div>
+
+  <div class="card">
+    <h2>側面から見た構造（概略）</h2>
+    <svg viewBox="0 0 920 262">
+      <line x1="18" y1="15" x2="18" y2="240" stroke="#555" stroke-width="1"/>
+      <line x1="12" y1="15" x2="24" y2="15" stroke="#555"/>
+      <line x1="12" y1="240" x2="24" y2="240" stroke="#555"/>
+      <text x="28" y="10" font-size="11" fill="#555">全高 約28mm</text>
+
+      <g opacity="0.55">
+        <rect x="128" y="75.2" width="96" height="52" fill="#3a3f47"/>
+        <rect x="585.2" y="75.2" width="96" height="52" fill="#3a3f47"/>
+        <rect x="112" y="15.2" width="128" height="68" rx="5" fill="#a3a9b1"/>
+        <rect x="569.2" y="15.2" width="128" height="68" rx="5" fill="#a3a9b1"/>
+        <rect x="272.4" y="87.2" width="112" height="40" fill="#2a2d33"/>
+        <rect x="424.8" y="87.2" width="112" height="40" fill="#2a2d33"/>
+        <polygon points="256.4,75.2 400.4,75.2 388.4,23.2 268.4,23.2" fill="#3d4148"/>
+        <polygon points="408.8,75.2 552.8,75.2 540.8,23.2 420.8,23.2" fill="#3d4148"/>
+      </g>
+
+      <rect x="36" y="103.2" width="737.6" height="24" fill="#1d1e21" opacity="0.35"/>
+      <rect x="36" y="103.2" width="73.6" height="24" fill="#1d1e21"/>
+      <rect x="700" y="103.2" width="73.6" height="24" fill="#1d1e21"/>
+
+      <rect x="60" y="127.2" width="689.6" height="12.8" fill="#16352a"/>
+
+      <rect x="401.2" y="140" width="142.4" height="67.2" fill="#4b3a6b"/>
+      <text x="472.4" y="170" font-size="11" fill="#fff" text-anchor="middle">KB2040</text>
+      <text x="472.4" y="186" font-size="11" fill="#fff" text-anchor="middle">＋コンスルー 8.4mm</text>
+
+      <rect x="69.6" y="140" width="32" height="80" fill="#c9a84a"/>
+      <rect x="708" y="140" width="32" height="80" fill="#c9a84a"/>
+
+      <path d="M36 240 L773.6 240 L773.6 127.2 L753.6 127.2 L753.6 220 L56 220 L56 127.2 L36 127.2 Z" fill="#2a2c30"/>
+      <rect x="68" y="228" width="35.2" height="12" fill="#fff"/>
+      <rect x="706.4" y="228" width="35.2" height="12" fill="#fff"/>
+
+      <rect x="77.6" y="103.2" width="16" height="64" fill="#b8bcc4" opacity="0.9"/>
+      <rect x="716" y="103.2" width="16" height="64" fill="#b8bcc4" opacity="0.9"/>
+      <rect x="70.4" y="92.8" width="30.4" height="10.4" rx="2" fill="#b8bcc4"/>
+      <rect x="708.8" y="92.8" width="30.4" height="10.4" rx="2" fill="#b8bcc4"/>
+
+      <rect x="77.6" y="196" width="16" height="32" fill="#b8bcc4" opacity="0.9"/>
+      <rect x="716" y="196" width="16" height="32" fill="#b8bcc4" opacity="0.9"/>
+      <rect x="70.4" y="229.6" width="30.4" height="8.8" rx="2" fill="#b8bcc4"/>
+      <rect x="708.8" y="229.6" width="30.4" height="8.8" rx="2" fill="#b8bcc4"/>
+
+      <text x="85.6" y="86" font-size="11" fill="#333" text-anchor="middle">M2×8</text>
+      <text x="85.6" y="256" font-size="11" fill="#333" text-anchor="middle">M2×4</text>
+
+      <line x1="700" y1="45" x2="786" y2="45" stroke="#888"/>
+      <text x="790" y="49" font-size="12" fill="#333">キーキャップ／ノブ</text>
+      <line x1="773.6" y1="115" x2="786" y2="115" stroke="#888"/>
+      <text x="790" y="119" font-size="12" fill="#333">上フレーム 3.0mm</text>
+      <line x1="749.6" y1="134" x2="786" y2="138" stroke="#888"/>
+      <text x="790" y="142" font-size="12" fill="#333">基板 1.6mm</text>
+      <line x1="740" y1="180" x2="786" y2="180" stroke="#888"/>
+      <text x="790" y="184" font-size="12" fill="#333">スペーサー 10mm</text>
+      <line x1="773.6" y1="232" x2="786" y2="232" stroke="#888"/>
+      <text x="790" y="236" font-size="12" fill="#333">底トレイ</text>
+    </svg>
+  </div>
+
+  <div class="card">
+    <h2>仕様</h2>
+    <table>
+      <tr><th>上フレーム</th><td>92.2 × 92.2mm、厚さ3.0mm、開口82.2 × 82.2mm（基板の端から2mm内側）、四隅にネジ用の張り出し（半径3mm）</td></tr>
+      <tr><th>底トレイ</th><td>92.2 × 92.2 × 14.1mm（USB-Cの穴は奥側の壁、リセットの穴は底）</td></tr>
+      <tr><th>固定</th><td>上：M2×8 なべ頭 ×4 ／ M2スペーサー10mm ×4 ／ 下：M2×4 なべ頭 ×4</td></tr>
+      <tr><th>全高</th><td>約28mm（キートップまで）</td></tr>
+      <tr><th>素材</th><td>JLC3DP FDM PLA（2部品とも）</td></tr>
+    </table>
+  </div>
+</main>
+
+<script>
+  const C30 = Math.cos(Math.PI / 6);
+  const SCALE = 3.0;
+  const PALETTES = {
+    black: { tray: '#2a2c30', frame: '#1d1e21', key: '#3d4148', knob: '#a3a9b1', pcb: '#16352a' },
+    white: { tray: '#e6e6e8', frame: '#f3f3f4', key: '#fafafa', knob: '#c3c8cf', pcb: '#16352a' },
+    two: { tray: '#8d9198', frame: '#1d1e21', key: '#ebe8e0', knob: '#1d1e21', pcb: '#16352a' }
+  };
+  const HOLES = [[3.2, 3.2], [83.0, 3.2], [3.2, 83.0], [83.0, 83.0]];
+  const KX = [14.5, 33.55, 52.6, 71.65];
+  let view = 'assembled';
+  let color = 'black';
+
+  function P(x, y, z) {
+    return [(x - y) * C30 * SCALE, ((x + y) * 0.5 - z) * SCALE];
+  }
+
+  function mix(hex, f) {
+    const n = parseInt(hex.slice(1), 16);
+    const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(function (c) {
+      const v = f >= 1 ? c + (255 - c) * (f - 1) : c * f;
+      return Math.round(Math.max(0, Math.min(255, v)));
+    });
+    return 'rgb(' + ch.join(',') + ')';
+  }
+
+  function polygon(pts3, fill, stroke, sw) {
+    const s = pts3.map(function (q) {
+      const p = P(q[0], q[1], q[2]);
+      return p[0].toFixed(1) + ',' + p[1].toFixed(1);
+    }).join(' ');
+    return '<polygon points="' + s + '" fill="' + fill + '" stroke="' + (stroke || fill) +
+      '" stroke-width="' + (sw || 0.5) + '" stroke-linejoin="round"/>';
+  }
+
+  function pathD(pts, z) {
+    return 'M' + pts.map(function (p) {
+      const q = P(p[0], p[1], z);
+      return q[0].toFixed(1) + ' ' + q[1].toFixed(1);
+    }).join(' L ') + ' Z';
+  }
+
+  function rrect(x0, y0, w, h, r, n) {
+    n = n || 6;
+    const pts = [];
+    const cs = [[x0 + w - r, y0 + r, -90], [x0 + w - r, y0 + h - r, 0], [x0 + r, y0 + h - r, 90], [x0 + r, y0 + r, 180]];
+    cs.forEach(function (c) {
+      for (let i = 0; i <= n; i++) {
+        const a = (c[2] + 90 * i / n) * Math.PI / 180;
+        pts.push([c[0] + r * Math.cos(a), c[1] + r * Math.sin(a)]);
+      }
+    });
+    return pts;
+  }
+
+  function circle(cx, cy, r, n) {
+    n = n || 28;
+    const pts = [];
+    for (let i = 0; i < n; i++) {
+      const a = 2 * Math.PI * i / n;
+      pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+    }
+    return pts;
+  }
+
+  function centroid(pts) {
+    let x = 0;
+    let y = 0;
+    pts.forEach(function (p) {
+      x += p[0];
+      y += p[1];
+    });
+    return [x / pts.length, y / pts.length];
+  }
+
+  function faceNormal(a, b, c, inward) {
+    let nx = b[1] - a[1];
+    let ny = -(b[0] - a[0]);
+    const mx = (a[0] + b[0]) / 2;
+    const my = (a[1] + b[1]) / 2;
+    if (nx * (mx - c[0]) + ny * (my - c[1]) < 0) {
+      nx = -nx;
+      ny = -ny;
+    }
+    if (inward) {
+      nx = -nx;
+      ny = -ny;
+    }
+    const len = Math.hypot(nx, ny) || 1;
+    return { nx: nx / len, ny: ny / len, d: mx + my };
+  }
+
+  function sides(pts, z0, z1, col, inward) {
+    const c = centroid(pts);
+    const faces = [];
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      const b = pts[(i + 1) % pts.length];
+      const n = faceNormal(a, b, c, inward);
+      if (n.nx + n.ny <= 0.001) {
+        continue;
+      }
+      faces.push({
+        d: n.d,
+        svg: polygon([[a[0], a[1], z0], [b[0], b[1], z0], [b[0], b[1], z1], [a[0], a[1], z1]], mix(col, 0.62 + 0.22 * n.nx))
+      });
+    }
+    faces.sort(function (p, q) {
+      return p.d - q.d;
+    });
+    return faces.map(function (f) {
+      return f.svg;
+    }).join('');
+  }
+
+  function topFace(pts, z, col) {
+    return polygon(pts.map(function (p) {
+      return [p[0], p[1], z];
+    }), mix(col, 1.08), 'rgba(0,0,0,0.35)', 0.6);
+  }
+
+  function prism(pts, z0, z1, col) {
+    return sides(pts, z0, z1, col, false) + topFace(pts, z1, col);
+  }
+
+  function frustum(bot, top, z0, z1, col) {
+    const c = centroid(bot);
+    const faces = [];
+    for (let i = 0; i < bot.length; i++) {
+      const j = (i + 1) % bot.length;
+      const n = faceNormal(bot[i], bot[j], c, false);
+      if (n.nx + n.ny <= 0.001) {
+        continue;
+      }
+      faces.push({
+        d: n.d,
+        svg: polygon([[bot[i][0], bot[i][1], z0], [bot[j][0], bot[j][1], z0], [top[j][0], top[j][1], z1], [top[i][0], top[i][1], z1]], mix(col, 0.62 + 0.22 * n.nx))
+      });
+    }
+    faces.sort(function (p, q) {
+      return p.d - q.d;
+    });
+    return faces.map(function (f) {
+      return f.svg;
+    }).join('') + topFace(top, z1, col);
+  }
+
+  function ringTop(outer, hole, z, col) {
+    return '<path d="' + pathD(outer, z) + ' ' + pathD(hole, z) + '" fill-rule="evenodd" fill="' +
+      mix(col, 1.08) + '" stroke="rgba(0,0,0,0.35)" stroke-width="0.6"/>';
+  }
+
+  function parts(dz, pal) {
+    const items = [];
+    for (let r = 0; r < 4; r++) {
+      for (let c = 0; c < 4; c++) {
+        items.push({ cx: KX[c], cy: KX[r], enc: r === 0 && (c === 0 || c === 3) });
+      }
+    }
+    items.sort(function (a, b) {
+      return (a.cx + a.cy) - (b.cx + b.cy);
+    });
+    const base = 14.1 + dz;
+    let s = '';
+    items.forEach(function (it) {
+      if (it.enc) {
+        const t = base + 14.0;
+        s += prism(rrect(it.cx - 6, it.cy - 6.5, 12, 13, 0.8, 2), base, base + 6.5, '#3a3f47');
+        s += prism(circle(it.cx, it.cy, 8, 36), base + 6.0, t, pal.knob);
+        s += polygon(circle(it.cx, it.cy, 6.6, 36).map(function (p) {
+          return [p[0], p[1], t];
+        }), 'none', 'rgba(0,0,0,0.25)', 0.6);
+        const a = P(it.cx, it.cy - 1.5, t);
+        const b = P(it.cx, it.cy - 6.0, t);
+        s += '<line x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] +
+          '" stroke="#ffffff" stroke-width="1.6" opacity="0.8"/>';
+      } else {
+        s += prism(rrect(it.cx - 7, it.cy - 7, 14, 14, 1, 2), base, base + 5.0, '#2a2d33');
+        s += frustum(rrect(it.cx - 9, it.cy - 9, 18, 18, 1.8, 4), rrect(it.cx - 7.6, it.cy - 7.9, 15.2, 15.2, 2.4, 4), base + 6.5, base + 12.5, pal.key);
+      }
+    });
+    return s;
+  }
+
+  function scene(mode, pal) {
+    const OUT = rrect(-3, -3, 92.2, 92.2, 6.0);
+    const TRAY_IN = rrect(-0.5, -0.5, 87.2, 87.2, 3.5);
+    const HOLE = rrect(2, 2, 82.2, 82.2, 2.0);
+    const PCB = rrect(0, 0, 86.2, 86.2, 3.0);
+    const pcbDz = mode === 'exploded' ? 26 : 0;
+    const frDz = mode === 'exploded' ? 52 : 0;
+    let s = '<defs>' +
+      '<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5"/></filter>' +
+      '<clipPath id="cpTray"><path d="' + pathD(TRAY_IN, 14.1) + '"/></clipPath>' +
+      '<clipPath id="cpHole"><path d="' + pathD(HOLE, 17.1 + frDz) + '"/></clipPath>' +
+      '</defs>';
+    s += '<path d="' + pathD(OUT, 0) + '" fill="rgba(0,0,0,0.25)" filter="url(#sh)" transform="translate(4,8)"/>';
+
+    if (mode === 'assembled') {
+      s += sides(OUT, 0, 14.1, pal.tray, false);
+      s += sides(OUT, 14.1, 17.1, pal.frame, false);
+      s += '<g clip-path="url(#cpHole)">';
+      s += polygon(HOLE.map(function (p) {
+        return [p[0], p[1], 14.1];
+      }), pal.pcb);
+      s += sides(HOLE, 14.1, 17.1, pal.frame, true);
+      HOLES.forEach(function (h) {
+        s += prism(circle(h[0], h[1], 3.0), 14.1, 17.1, pal.frame);
+      });
+      s += '</g>';
+      s += ringTop(OUT, HOLE, 17.1, pal.frame);
+      HOLES.forEach(function (h) {
+        s += prism(circle(h[0], h[1], 1.9, 16), 17.1, 18.4, '#b8bcc4');
+      });
+      s += parts(0, pal);
+    } else {
+      s += sides(OUT, 0, 14.1, pal.tray, false);
+      s += '<g clip-path="url(#cpTray)">';
+      s += polygon(TRAY_IN.map(function (p) {
+        return [p[0], p[1], 2.5];
+      }), mix(pal.tray, 0.85));
+      s += sides(TRAY_IN, 2.5, 14.1, pal.tray, true);
+      HOLES.forEach(function (h) {
+        s += prism(circle(h[0], h[1], 2.0, 6), 2.5, 12.5, '#c9a84a');
+      });
+      s += '</g>';
+      s += ringTop(OUT, TRAY_IN, 14.1, pal.tray);
+
+      s += prism(PCB, 12.5 + pcbDz, 14.1 + pcbDz, pal.pcb);
+      HOLES.forEach(function (h) {
+        s += polygon(circle(h[0], h[1], 1.1, 16).map(function (p) {
+          return [p[0], p[1], 14.1 + pcbDz];
+        }), '#d9c27a', 'rgba(0,0,0,0.3)', 0.4);
+      });
+      s += parts(pcbDz, pal);
+
+      const z0 = 14.1 + frDz;
+      const z1 = 17.1 + frDz;
+      s += sides(OUT, z0, z1, pal.frame, false);
+      s += sides(HOLE, z0, z1, pal.frame, true);
+      HOLES.forEach(function (h) {
+        s += prism(circle(h[0], h[1], 3.0), z0, z1, pal.frame);
+      });
+      s += ringTop(OUT, HOLE, z1, pal.frame);
+      HOLES.forEach(function (h) {
+        s += polygon(circle(h[0], h[1], 1.2, 16).map(function (p) {
+          return [p[0], p[1], z1];
+        }), '#0b0b0c');
+      });
+
+      const label = function (txt, z) {
+        const y = (43.1 - z) * SCALE;
+        return '<line x1="244" y1="' + y + '" x2="256" y2="' + y + '" stroke="#888"/>' +
+          '<text x="260" y="' + (y + 4) + '" font-size="12" fill="#333">' + txt + '</text>';
+      };
+      s += label('上フレーム（3.0mm）', 15.6 + frDz);
+      s += label('基板＋キー', 14.1 + pcbDz);
+      s += label('底トレイ＋スペーサー', 7);
+    }
+    return s;
+  }
+
+  function render() {
+    const svg = document.getElementById('iso');
+    svg.setAttribute('viewBox', view === 'assembled' ? '-270 -110 540 410' : '-275 -235 670 530');
+    svg.innerHTML = scene(view, PALETTES[color]);
+    document.getElementById('viewTitle').textContent = view === 'assembled'
+      ? '完成状態（斜め上から）'
+      : '分解状態（上から：上フレーム → 基板＋キー → 底トレイ）';
+    document.querySelectorAll('[data-view]').forEach(function (b) {
+      b.classList.toggle('on', b.dataset.view === view);
+    });
+    document.querySelectorAll('[data-color]').forEach(function (b) {
+      b.classList.toggle('on', b.dataset.color === color);
+    });
+  }
+
+  document.querySelectorAll('[data-view]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      view = b.dataset.view;
+      render();
+    });
+  });
+  document.querySelectorAll('[data-color]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      color = b.dataset.color;
+      render();
+    });
+  });
+  render();
+</script>
+</body>
+</html>
